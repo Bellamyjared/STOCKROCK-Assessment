@@ -20,14 +20,14 @@ const GetTickers = async () => {
 // get Aggregate data from polygon.io API, must get last 7 days, polygon.io only stores data from workdays (excludes workends and holidays)
 const GetAggregate = async (tickerName) => {
   const date = new Date();
-  // today
+  // Today's date
   date.setDate(date.getDate());
   const toDate = date.toISOString().split("T")[0];
-  // 7 days ago
+  // Date from 7 days ago
   date.setDate(date.getDate() - 7);
   const fromDate = date.toISOString().split("T")[0];
 
-  // get aggregates data
+  // get Aggregate data
   return rest.stocks
     .aggregates(
       (ticker = tickerName),
