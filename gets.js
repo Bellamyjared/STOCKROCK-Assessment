@@ -1,5 +1,6 @@
 // ****************** CREATED BY JARED BELLAMY 9/5/2022 ************************************
 const { restClient, referenceClient } = require("@polygon.io/client-js");
+// personal APIKey, will be removed after 10/1/2022
 const APIKey = "4sM3dvRoxOlODNXfV_p010QOJjPX7UTR";
 const reference = referenceClient(APIKey);
 const rest = restClient(APIKey);
@@ -17,7 +18,7 @@ const GetTickers = async () => {
 };
 
 // get Aggregate data from polygon.io API, must get last 7 days, polygon.io only stores data from workdays (excludes workends and holidays)
-const GetAggregates = async (tickerName) => {
+const GetAggregate = async (tickerName) => {
   const date = new Date();
   // today
   date.setDate(date.getDate());
@@ -43,4 +44,4 @@ const GetAggregates = async (tickerName) => {
     });
 };
 
-module.exports = { GetTickers, GetAggregates };
+module.exports = { GetTickers, GetAggregate };

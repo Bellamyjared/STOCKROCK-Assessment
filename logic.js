@@ -1,5 +1,5 @@
 // ****************** CREATED BY JARED BELLAMY 9/5/2022 ************************************
-const { GetTickers, GetAggregates } = require("./gets");
+const { GetTickers, GetAggregate } = require("./gets");
 
 const CollectData = async () => {
   const tickers = await GetTickers();
@@ -11,7 +11,7 @@ const CollectData = async () => {
       // add ticker to data list, and get aggregate price data of select ticker
       data = [
         ...data,
-        { ticker: ticker, aggregates: await GetAggregates(ticker.ticker) },
+        { ticker: ticker, aggregates: await GetAggregate(ticker.ticker) },
       ];
     }
   } else {
