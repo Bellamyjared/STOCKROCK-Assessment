@@ -18,3 +18,4 @@ A development server should be available at http://localhost:8123
 npm run test
 ```
 NOTE - IF USER HAS USED TO MANY API REQUESTS IN THE LAST MINUTE THE TESTS WILL FAIL! 
+To fix, make sure there are no requests within 1-5 minutes of testing.
