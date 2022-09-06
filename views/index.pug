@@ -1,0 +1,29 @@
+//- ****************** EDITED BY JARED BELLAMY 9/5/2022 ************************************
+extends layout
+block layout-content
+    div.View
+        h1.Banner STOCKCROCK
+        if data != null
+            each item in data
+                div
+                h3 Ticker
+                p #{item.ticker}
+                if item.tickerName != null
+                    h3 Ticker Name
+                    p #{item.tickerName}
+                    h3 Aggregate Prices
+                    each aggre in item.aggreData
+                        table(style="width:100%; max-width: 300px;")
+                            tr
+                                th Open
+                                th Close
+                                th Difference
+                            tr 
+                                td #{aggre.openPrice}
+                                td #{aggre.closePrice}
+                                td #{aggre.difference}
+                        br
+                    P ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        else 
+            h3 There was an error with your request. Please try again later.
+            
